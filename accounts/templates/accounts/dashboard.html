@@ -1,0 +1,72 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+{% include 'accounts/status.html' %}
+
+<br>
+
+<div class="row" style="margin: 1%;">
+    <div class="col-md-5">
+        <h5>CUSTOMERS</h5>
+        <hr>
+        <div class="card">
+            <div class="card-body">
+                <a href="#!" class="btn btn-primary btn-block">Go somewhere</a>
+                <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">Customer</th>
+                        <th scope="col">Phone</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for customer in customers %}
+                        <tr>
+                          <td>{{customer.name}}</td>
+                          <td>{{customer.phone}}</td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <h5>Recent Orders</h5>
+        <hr>
+        <div class="card">
+            <div class="card-body">
+                <a href="#!" class="btn btn-primary btn-block">Go somewhere</a>
+                <table class="table table-sm">
+                    <thead>
+                      <tr>
+                        <th scope="col">Product</th>
+                        <th scope="col">Date Ordered</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Remove</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for order in orders %}
+                        <tr>
+                          <td>{{order.product}}</td>
+                          <td>{{order.date_created}}</td>
+                          <td>{{order.status}}</td>
+                          <td><a type="button" class="btn btn-outline-primary" data-mdb-ripple-color="dark">Update</a></td>
+                          <td><a type="button" class="btn btn-outline-danger" data-mdb-ripple-color="dark">Delete</a></td>
+                        </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+</div>
+
+{% endblock %}
+
